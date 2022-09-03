@@ -4,7 +4,7 @@ import {createRoot} from 'react-dom/client'
 import {Dialog} from '@reach/dialog'
 import {Logo} from './components/logo'
 
-const LoginForm = ({onSubmit, buttonText}) => {
+function LoginForm({onSubmit, buttonText}) {
   function handleSubmit(event) {
     event.preventDefault()
     const {username, password} = event.target.elements
@@ -18,16 +18,12 @@ const LoginForm = ({onSubmit, buttonText}) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="username">
-          Username
-          <input id="username" type="text" />
-        </label>
+        <label htmlFor="username">Username</label>
+        <input id="username" />
       </div>
       <div>
-        <label htmlFor="password">
-          Password
-          <input id="password" type="password" />
-        </label>
+        <label htmlFor="password">Password</label>
+        <input id="password" type="password" />
       </div>
       <div>
         <button type="submit">{buttonText}</button>
